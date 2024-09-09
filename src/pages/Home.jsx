@@ -1,163 +1,272 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, AlertCircle,  } from 'lucide-react';
 
-const Card = ({ children, className, onMouseEnter, onMouseLeave }) => (
-  <div 
-    className={`bg-white rounded-lg shadow-md p-6 ${className}`} 
-    onMouseEnter={onMouseEnter} 
-    onMouseLeave={onMouseLeave}
-  >
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+// Components for Basic Layouts
+const Container = ({ children, className }) => (
+  <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
     {children}
   </div>
 );
 
-const CardHeader = ({ children }) => (
-  <div className="mb-4">
-    {children}
-  </div>
+const Divider = () => <div className="h-px bg-gray-700 my-12"></div>; // Darker divider for black background
+
+// Hero Section
+const HeroSection = () => (
+  <section className="relative py-32 bg-black text-center">
+    <Container>
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-6xl font-bold mb-6 leading-tight text-white"
+      >
+        Unleashing AI for the Future
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="text-xl mb-12 max-w-2xl mx-auto text-gray-400"
+      >
+        Discover the possibilities of artificial intelligence with
+        state-of-the-art research and solutions designed for real-world impact.
+      </motion.p>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white text-black font-semibold py-3 px-8 rounded-full transition-transform duration-300"
+      >
+        Learn More
+      </motion.button>
+    </Container>
+  </section>
 );
 
-const CardTitle = ({ children, className }) => (
-  <h3 className={`text-xl font-semibold ${className}`}>
-    {children}
-  </h3>
-);
-
-const CardContent = ({ children }) => (
-  <div>
-    {children}
-  </div>
-);
-
-const CardDescription = ({ children }) => (
-  <p className="text-gray-600">
-    {children}
-  </p>
-);
-
-const Accordion = ({ children, className }) => (
-  <div className={`accordion ${className}`}>
-    {children}
-  </div>
-);
-
-const AccordionItem = ({ children, value }) => (
-  <div className="accordion-item" data-value={value}>
-    {children}
-  </div>
-);
-
-const AccordionTrigger = ({ children }) => (
-  <button className="accordion-trigger">
-    {children}
-  </button>
-);
-
-const AccordionContent = ({ children }) => (
-  <div className="accordion-content">
-    {children}
-  </div>
-);
-
-const Home = () => {
-  const [activeFeature, setActiveFeature] = useState(null);
-
+// Key Features Section
+const KeyFeatures = () => {
   const features = [
-    { title: 'Custom AI Models', description: 'Tailored LLM solutions for your specific business needs', icon: <CheckCircle className="h-6 w-6 text-green-500" /> },
-    { title: 'Data Security', description: 'Enterprise-grade security measures to protect your sensitive information', icon: <AlertCircle className="h-6 w-6 text-red-500" /> },
-    { title: 'Scalable Infrastructure', description: 'Flexible deployment options to grow with your business', icon: <ArrowRight className="h-6 w-6 text-blue-500" /> },
-  ];
-
-  const faqs = [
-    { question: 'What makes your AI solutions unique?', answer: 'Our AI solutions are tailored specifically for enterprise needs, focusing on scalability, security, and customization.' },
-    { question: 'How do you ensure data privacy?', answer: 'We employ state-of-the-art encryption, access controls, and comply with industry standards like GDPR and CCPA.' },
-    { question: 'Can your solutions integrate with existing systems?', answer: 'Yes, our AI models are designed to seamlessly integrate with a wide range of existing enterprise systems and workflows.' },
+    {
+      title: "Custom AI Models",
+      description:
+        "Develop advanced AI models tailored to your specific needs, empowering businesses to innovate.",
+    },
+    {
+      title: "Data Privacy",
+      description:
+        "Ensuring maximum security and privacy with enterprise-grade solutions for data protection.",
+    },
+    {
+      title: "Integration Ready",
+      description:
+        "Seamless integration with existing systems to maximize productivity and reduce downtime.",
+    },
   ];
 
   return (
-    <div className="py-20 bg-gray-100 text-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-6 text-center"
-        >
-          Empowering Enterprises with Advanced AI
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl mb-12 text-center"
-        >
-          Cutting-edge LLM models tailored for business solutions.
-        </motion.p>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+    <section className="py-24 bg-black">
+      <Container>
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">
+          Key Features
+        </h2>
+        <div className="grid md:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="text-center"
             >
-              <Card 
-                className="h-full cursor-pointer transition-all duration-300 hover:shadow-lg"
-                onMouseEnter={() => setActiveFeature(index)}
-                onMouseLeave={() => setActiveFeature(null)}
-              >
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    {feature.icon}
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
+              <h3 className="text-2xl font-semibold mb-4 text-white">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-16"
-        >
-          <h2 className="text-3xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-center"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300"
-          >
-            Get Started
-          </motion.button>
-        </motion.div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 };
+
+// Client Logos Section
+const ClientsSection = () => (
+  <section className="py-24 bg-black text-center">
+    <Container>
+      <h2 className="text-3xl font-bold mb-8 text-white">
+        Trusted by Leading Organizations
+      </h2>
+      <div className="flex flex-wrap justify-center items-center gap-8">
+        {/* Replace with actual client logos */}
+        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
+        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
+        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
+        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
+        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
+      </div>
+    </Container>
+  </section>
+);
+
+// Use Cases Section
+// Use Cases Section
+const UseCasesSection = () => (
+  <section id="usecases" className="py-24 bg-black">
+    <Container>
+      <h2 className="text-3xl font-bold text-center mb-12 text-white">
+        Real-World Use Cases
+      </h2>
+      <div className="grid md:grid-cols-3 gap-12">
+        {/* Education Use Case Card */}
+        <Link
+          to="/education"
+          className="group relative block bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-10"></div>
+          <img
+            src="your-education-image-url.jpg"
+            alt="Education Use Case"
+            className="w-full h-56 object-cover transition-transform duration-300 transform group-hover:scale-105"
+          />
+          <div className="p-6">
+            <h3 className="text-2xl font-semibold text-white mb-2">
+              Education
+            </h3>
+            <p className="text-gray-300">
+              Personalized learning, intelligent tutoring, and AI-driven
+              analytics for better educational outcomes.
+            </p>
+          </div>
+        </Link>
+
+        {/* Software Engineering Use Case Card */}
+        <Link
+          to="/software-engineering"
+          className="group relative block bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-10"></div>
+          <img
+            src="your-software-engineering-image-url.jpg"
+            alt="Software Engineering Use Case"
+            className="w-full h-56 object-cover transition-transform duration-300 transform group-hover:scale-105"
+          />
+          <div className="p-6">
+            <h3 className="text-2xl font-semibold text-white mb-2">
+              Making Software Engineering Accessible
+            </h3>
+            <p className="text-gray-300">
+              AI tools that simplify coding, provide real-time feedback, and
+              make learning to code more accessible.
+            </p>
+          </div>
+        </Link>
+
+        {/* Healthcare Use Case Card */}
+        <Link
+          to="/healthcare"
+          className="group relative block bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-10"></div>
+          <img
+            src="your-healthcare-image-url.jpg"
+            alt="Healthcare Use Case"
+            className="w-full h-56 object-cover transition-transform duration-300 transform group-hover:scale-105"
+          />
+          <div className="p-6">
+            <h3 className="text-2xl font-semibold text-white mb-2">
+              Healthcare
+            </h3>
+            <p className="text-gray-300">
+              AI solutions for improving diagnostics, optimizing treatment, and
+              enhancing patient care.
+            </p>
+          </div>
+        </Link>
+      </div>
+    </Container>
+  </section>
+);
+
+// Testimonials Section
+const TestimonialsSection = () => (
+  <section className="py-24 bg-black text-center">
+    <Container>
+      <h2 className="text-3xl font-bold mb-12 text-white">
+        What Our Clients Say
+      </h2>
+      <div className="grid md:grid-cols-2 gap-12">
+        {/* Testimonial Example */}
+        <div className="p-8 bg-gray-800 shadow-lg rounded-lg">
+          <p className="text-xl text-gray-300 mb-4">
+            This AI solution transformed our approach to data analysis, driving
+            better results across the board.
+          </p>
+          <p className="text-gray-500">— Jane Doe, CTO of ExampleCorp</p>
+        </div>
+        <div className="p-8 bg-gray-800 shadow-lg rounded-lg">
+          <p className="text-xl text-gray-300 mb-4">
+            Innovative, reliable, and highly effective AI models that integrate
+            seamlessly into our workflow.
+          </p>
+          <p className="text-gray-500">— John Smith, CEO of FinTechCo</p>
+        </div>
+      </div>
+    </Container>
+  </section>
+);
+
+// Call to Action Section
+const CTASection = () => (
+  <section className="py-24 bg-black text-center">
+    <Container>
+      <motion.h2
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl font-bold mb-6 text-white"
+      >
+        Ready to partner with us?
+      </motion.h2>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white text-black font-semibold py-3 px-8 rounded-full transition-transform duration-300"
+      >
+        Contact Us
+      </motion.button>
+    </Container>
+  </section>
+);
+
+// Footer Section
+const Footer = () => (
+  <footer className="py-16 bg-black text-center">
+    <Container>
+      <p className="text-gray-500">
+        © 2024 Your AI Research Lab. All rights reserved.
+      </p>
+    </Container>
+  </footer>
+);
+
+// Main Home Page Component
+const Home = () => (
+  <div className="bg-black text-white">
+    <HeroSection />
+    <Divider />
+    <KeyFeatures />
+    <Divider />
+    <ClientsSection />
+    <Divider />
+    <UseCasesSection />
+    <Divider />
+    <TestimonialsSection />
+    <Divider />
+    <CTASection />
+    <Footer />
+  </div>
+);
 
 export default Home;
