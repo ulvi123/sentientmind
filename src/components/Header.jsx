@@ -5,14 +5,17 @@ import { useState } from 'react';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isBlurring, setIsBlurring] = useState(false);
 
-  // Handle blur state
+  // Handle blur on mouse enter and leave
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
+    setIsBlurring(true); // Enable blur effect
   };
 
   const handleMouseLeave = () => {
     setIsDropdownOpen(false);
+    setIsBlurring(false); // Disable blur effect
   };
 
   return (
@@ -91,7 +94,7 @@ const Header = () => {
       </header>
 
       {/* Main Content with Blur Effect */}
-      <div className={`transition-all duration-300 ${isDropdownOpen ? 'blur-sm' : ''}`}>
+      <div className={`transition-all duration-300 ${isBlurring ? 'filter blur-md' : ''}`}>
         {/* Your main content goes here */}
       </div>
     </>
