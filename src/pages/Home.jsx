@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import HighlightedFeatures from "../components/HighlightedFeatures"; // Adjust the path if necessary
 
 // Components for Basic Layouts
 const Container = ({ children, className }) => (
@@ -110,7 +111,6 @@ const ClientsSection = () => (
   </section>
 );
 
-// Use Cases Section
 // Use Cases Section
 const UseCasesSection = () => (
   <section id="usecases" className="py-24 bg-black">
@@ -256,7 +256,11 @@ const Home = () => (
   <div className="bg-black text-white">
     <HeroSection />
     <Divider />
+    {/* Use the Key Features section */}
     <KeyFeatures />
+    <Divider />
+    {/* Add the Highlighted Features component here */}
+    <HighlightedFeatures />
     <Divider />
     <ClientsSection />
     <Divider />

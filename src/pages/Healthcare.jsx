@@ -1,11 +1,12 @@
 
-import UseCaseDetails from '../components/UseCaseDetails'; // Adjust the path as needed
+import UseCaseDetails from '../components/UseCaseDetails';
+import healthcare from "../../public/healthcare.jpg" // Adjust the path as needed
 
 const Healthcare = () => {
   return (
     <UseCaseDetails
       title="Healthcare"
-      image="your-healthcare-image-url.jpg" // Replace with actual image URL
+      image={healthcare} // Replace with actual image URL
       introduction="In healthcare, our AI solutions are enhancing diagnostic accuracy, optimizing treatment plans, and enabling predictive analytics. We help medical professionals make data-driven decisions faster, improving patient outcomes and reducing costs."
       benefits={[
         { icon: 'heartbeat', title: 'Improved Diagnostics' },

@@ -1,11 +1,12 @@
 
-import UseCaseDetails from '../components/UseCaseDetails'; // Adjust the path as needed
+import UseCaseDetails from '../components/UseCaseDetails'; 
+import education from "../../public/education.jpg";
 
 const Education = () => {
   return (
     <UseCaseDetails
       title="Education"
-      image="your-education-image-url.jpg" // Replace with actual image URL
+      image={education} // Replace with actual image URL
       introduction="Our AI-driven tools are revolutionizing education by providing personalized learning experiences, automating administrative tasks, and enabling educators to focus on what matters most – teaching."
       benefits={[
         { icon: 'graduation-cap', title: 'Personalized Learning' },

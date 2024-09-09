@@ -1,6 +1,7 @@
 
 import UseCaseDetails from '../components/UseCaseDetails';
-import code from "../../public/code.png" // Adjust the path as needed
+import code from "../../public/code.png"
+import { FaCodepen } from 'react-icons/fa'; // Adjust the path as needed
 
 const SoftwareEngineering = () => {
   return (
@@ -9,7 +10,7 @@ const SoftwareEngineering = () => {
       image={code} // Replace with actual image URL
       introduction="Our AI tools are breaking down barriers to entry in software engineering by simplifying complex concepts, providing real-time feedback, and creating adaptive learning paths for aspiring developers."
       benefits={[
-        { icon: 'code', title: 'Simplified Coding' },
+        { icon: { FaCodepen }, title: 'Simplified Coding' },
         { icon: 'chalkboard-teacher', title: 'Real-Time Feedback' },
         { icon: 'brain', title: 'Adaptive Learning' },
         { icon: 'users', title: 'Community Collaboration' },
