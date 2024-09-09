@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 // Icon Component
 const Icon = ({ icon, title }) => (
-  <div className="flex items-center space-x-3 mb-4">
-    <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full">
-      <i className={`fas fa-${icon} text-white`}></i>
+  <div className="flex flex-col items-center text-center">
+    <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full mb-4 flex items-center justify-center">
+      <i className={`fas fa-${icon} text-white text-2xl`}></i>
     </div>
     <span className="text-xl font-medium text-white">{title}</span>
   </div>
@@ -63,7 +63,7 @@ const UseCaseDetails = ({ title, image, introduction, benefits, features, statis
         {/* Benefits Section */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-white mb-8 text-center">Key Benefits</h2>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-10 justify-items-center">
             {benefits.map((benefit, index) => (
               <Icon key={index} icon={benefit.icon} title={benefit.title} />
             ))}
