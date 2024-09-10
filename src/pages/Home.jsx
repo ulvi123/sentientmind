@@ -39,7 +39,7 @@ const HeroSection = () => (
         whileTap={{ scale: 0.95 }}
         className="bg-white text-black font-semibold py-3 px-8 rounded-full transition-transform duration-300"
       >
-        Learn More
+        <Link to="/research">Explore Our Research</Link>
       </motion.button>
     </Container>
   </section>
@@ -234,7 +234,7 @@ const CTASection = () => (
         whileTap={{ scale: 0.95 }}
         className="bg-white text-black font-semibold py-3 px-8 rounded-full transition-transform duration-300"
       >
-        Contact Us
+        <Link to="/contact">Contact Us</Link>
       </motion.button>
     </Container>
   </section>

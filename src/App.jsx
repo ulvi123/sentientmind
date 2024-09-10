@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Education from "./pages/Education";
 import SoftwareEngineering from "./pages/SoftwareEngineering";
 import Healthcare from "./pages/Healthcare";
+import ContactPage from "./components/ContactForm";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
               element={<SoftwareEngineering />}
             />
             <Route path="/healthcare" element={<Healthcare />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
         <Footer />

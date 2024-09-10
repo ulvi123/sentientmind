@@ -2,85 +2,81 @@
 /* eslint-disable react/prop-types */
 
 import { motion } from 'framer-motion';
+import numbers from "../../public/numbers.jpg"
+import ellipse from "../../public/explosion.jpg"
+import walls from "../../public/walls.jpg"
+import corp from "../../public/corp.jpg"
 
-const ProductCard = ({ title, description }) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    className="border border-gray-200 p-6 rounded-lg shadow-lg mb-8"
-  >
-    <h3 className="text-2xl font-bold mb-4">{title}</h3>
-    <p className="text-lg">{description}</p>
-  </motion.div>
+import { Link } from 'react-router-dom';
+
+
+// Vertical Feature Section Component
+const FeatureSection = ({ image, title, description }) => (
+  <div className="flex flex-col items-center text-center mb-16">
+    <div className="mb-6">
+      <h3 className="text-3xl font-semibold mb-4">{title}</h3>
+      <p className="text-lg text-gray-300">{description}</p>
+    </div>
+    <img src={image} alt={title} className="w-full max-w-2xl h-auto rounded-lg shadow-lg" />
+  </div>
 );
 
+// Main Products Component
 const Products = () => (
-  <div className="container mx-auto px-4 py-12">
-    <h1 className="text-5xl font-bold mb-12">Our AI Solutions</h1>
-    
-    <div className="mb-16">
-      <h2 className="text-3xl font-bold mb-6">Flagship Product: Sentient1</h2>
-      <p className="text-xl mb-8">
-        Sentient1 is our state-of-the-art language model, designed to revolutionize how businesses interact with AI. 
-        With its advanced natural language processing capabilities, Sentient1 offers unparalleled performance in a wide range of applications.
-      </p>
-      <div className="grid md:grid-cols-2 gap-8">
-        <ProductCard 
-          title="Sentient1 for Customer Service"
-          description="Enhance your customer support with AI-powered chatbots and virtual assistants that understand and respond to customer queries with human-like precision."
-        />
-        <ProductCard 
-          title="Sentient1 for Content Creation"
-          description="Streamline your content production process with AI-assisted writing, from generating ideas to producing full articles tailored to your brand voice."
-        />
-        <ProductCard 
-          title="Sentient1 for Data Analysis"
-          description="Harness the power of natural language processing to extract insights from unstructured data, making your business intelligence more accessible and actionable."
-        />
-        <ProductCard 
-          title="Sentient1 for Code Generation"
-          description="Accelerate your software development cycle with AI-powered code suggestions and automated documentation generation."
-        />
+  <div className="bg-black text-white min-h-screen">
+    {/* Hero Section */}
+    <section className="w-full py-20 px-6 text-center bg-black">
+      <div className="max-w-4xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-6xl font-bold mb-4"
+        >
+          Advancing AI with Cutting-Edge Research
+        </motion.h1>
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+          At SentientMind AI Research Lab, we are pioneering the future of artificial intelligence with our flagship model, Sentient v1, designed to solve complex problems across industries.
+        </p>
+        <motion.div
+          className="flex justify-center space-x-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          <button className="bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
+            <Link to="/research">Explore Our Research</Link>
+          </button>
+          <button className="text-white font-semibold py-2 px-6 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+            <Link to="/contact">Contact Us</Link>
+          </button>
+        </motion.div>
       </div>
-    </div>
-    
-    <div>
-      <h2 className="text-3xl font-bold mb-6">Enterprise Solutions</h2>
-      <div className="space-y-8">
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">Custom AI Integration</h3>
-          <p className="text-lg">
-            We work closely with your team to develop tailored AI solutions that integrate seamlessly with your existing systems and workflows. 
-            Our experts will help you leverage the full potential of Sentient1 and our other AI technologies to drive innovation and efficiency in your organization.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">AI Consulting Services</h3>
-          <p className="text-lg">
-            Our team of AI specialists provides comprehensive consulting services to help you navigate the complex landscape of artificial intelligence. 
-            From strategy development to implementation and beyond, we're here to ensure your AI initiatives deliver measurable business value.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">Sentient1 API</h3>
-          <p className="text-lg">
-            Access the power of Sentient1 through our robust API, allowing you to integrate advanced language understanding and generation capabilities into your applications with ease. 
-            Our flexible pricing plans cater to businesses of all sizes, from startups to large enterprises.
-          </p>
-        </div>
-      </div>
-    </div>
-    
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.5 }}
-      className="mt-16 text-center"
-    >
-      <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business with AI?</h2>
-      <button className="bg-primary text-secondary font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300">
-        Contact Sales
-      </button>
-    </motion.div>
+    </section>
+
+    {/* Vertical Stacked Feature Sections */}
+    <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+      <FeatureSection
+        image={ellipse}
+        title="Introducing Sentient v1: Our Flagship AI Model"
+        description="Sentient v1 is a groundbreaking AI model capable of advanced language understanding, complex problem-solving, and real-time data processing. It's built to empower researchers and developers to explore new frontiers in AI."
+      />
+      <FeatureSection
+        image={numbers}
+        title="Voxpal-The LLM language speaking model powered by Sentient v1"
+        description="Our research lab is at the forefront of AI innovation, focusing on the development of scalable AI models, ethical AI practices, and breakthrough technologies that push the boundaries of what AI can achieve."
+      />
+      <FeatureSection
+        image={walls}
+        title="Pagernode - Sentient v1 powered solution for Product teams to streamline their workflows within their organizations"
+        description="From healthcare to finance, our custom AI solutions are tailored to solve specific challenges in various industries, leveraging the power of Sentient v1 to deliver unparalleled results."
+      />
+      <FeatureSection
+        image={corp}
+        title="CodeWhisperer"
+        description="CodeWhisperer is a cutting-edge coding solution designed to help individuals learn programming through the power of Large Language Models (LLMs)"
+      />
+    </section>
   </div>
 );
 
