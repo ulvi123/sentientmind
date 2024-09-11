@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import girl from "../../public/girl.jpg";
 
 const Careers = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -8,7 +9,8 @@ const Careers = () => {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <div className="relative flex flex-col md:flex-row items-center justify-between bg-black px-8 py-16 md:py-32">
-        <div className="flex-1 text-center md:text-left md:max-w-lg">
+        {/* Left Side: Search Section */}
+        <div className="flex-1 max-w-md mx-auto md:mx-0 md:max-w-lg text-center md:text-left">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -18,7 +20,7 @@ const Careers = () => {
             Make a Bold Move
           </motion.h1>
           {/* Search Bar */}
-          <div className="relative mb-8 w-full max-w-md mx-auto md:mx-0">
+          <div className="relative mb-8 w-full">
             <input
               type="text"
               placeholder="Start your search"
@@ -39,15 +41,15 @@ const Careers = () => {
           </motion.button>
         </div>
 
-        {/* Background Image */}
-        <div className="flex-1 mt-8 md:mt-0 md:ml-8">
+        {/* Right Side: Background Image */}
+        <div className="flex-1 flex justify-center mt-8 md:mt-0 md:ml-8">
           <motion.img
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            src="your-image-url.jpg" // Replace with your actual image URL
+            src={girl} // Replace with your actual image URL
             alt="Join Our Team"
-            className="w-full h-auto rounded-lg shadow-lg object-cover max-w-screen-md mx-auto"
+            className="max-w-full max-h-[400px] md:max-h-[600px] rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
@@ -65,7 +67,7 @@ const Careers = () => {
             <p className="text-gray-300 mb-4">Remote or On-site, New York</p>
             <button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button>
           </motion.div>
-          {/* Add more job cards as needed */}
+          {/* Additional Job Cards */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800 p-6 rounded-lg shadow-lg"
@@ -78,7 +80,7 @@ const Careers = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-gray-800 p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-2xl font-semibold text-white mb-2">AI reseracher</h3>
+            <h3 className="text-2xl font-semibold text-white mb-2">AI Researcher</h3>
             <p className="text-gray-300 mb-4">San Francisco, CA or Remote</p>
             <button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button>
           </motion.div>
