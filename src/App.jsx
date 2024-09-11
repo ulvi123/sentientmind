@@ -10,6 +10,9 @@ import Education from "./pages/Education";
 import SoftwareEngineering from "./pages/SoftwareEngineering";
 import Healthcare from "./pages/Healthcare";
 import ContactPage from "./components/ContactForm";
+import Careers from "./pages/Careers";
+import About from "./pages/About";
+import Privacy from "./pages/Privacy";
 
 const App = () => {
   return (
@@ -27,6 +30,9 @@ const App = () => {
             <Route path="/research" element={<Research />} />
             <Route path="/products" element={<Products />} />
             <Route path="/company" element={<Company />} />
+            <Route path="/company/careers" element={<Careers />} />
+            <Route path="/company/about" element={<About />} />
+            <Route path="/company/security" element={<Privacy />} />
             <Route path="/education" element={<Education />} />
             <Route
               path="/software-engineering"

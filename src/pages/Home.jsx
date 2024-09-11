@@ -245,7 +245,7 @@ const Footer = () => (
   <footer className="py-16 bg-black text-center">
     <Container>
       <p className="text-gray-500">
-        © 2024 Your AI Research Lab. All rights reserved.
+        © 2024 SentimentMind. All rights reserved.
       </p>
     </Container>
   </footer>

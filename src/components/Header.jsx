@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+// import logo from '../../public/logo (2).png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,9 @@ const Header = () => {
       <header className="bg-black shadow-md relative z-50">
         <nav className="container mx-auto px-4 py-5 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-white">SentientMind</Link>
+          <Link to="/" className="text-2xl font-bold text-white">
+           SentientMind
+          </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8 relative">
