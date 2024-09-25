@@ -2,22 +2,20 @@
 /* eslint-disable react/prop-types */
 
 import { motion } from 'framer-motion';
-import numbers from "../../public/numbers.jpg"
-import ellipse from "../../public/explosion.jpg"
-import walls from "../../public/walls.jpg"
-import corp from "../../public/corp.jpg"
-
+// import ellipse from "../../public/explosion.jpg";
+import corp from "../../public/corp.jpg";
 import { Link } from 'react-router-dom';
 
-
-// Vertical Feature Section Component
-const FeatureSection = ({ image, title, description }) => (
+// Vertical Feature Section Component with Link
+const FeatureSection = ({ image, title, description, linkTo }) => (
   <div className="flex flex-col items-center text-center mb-16">
     <div className="mb-6">
       <h3 className="text-3xl font-semibold mb-4">{title}</h3>
       <p className="text-lg text-gray-300">{description}</p>
     </div>
-    <img src={image} alt={title} className="w-full max-w-2xl h-auto rounded-lg shadow-lg" />
+    <Link to={linkTo} className="w-full max-w-2xl h-auto">
+      <img src={image} alt={title} className="w-full max-w-2xl h-auto rounded-lg shadow-lg" />
+    </Link>
   </div>
 );
 
@@ -56,25 +54,17 @@ const Products = () => (
 
     {/* Vertical Stacked Feature Sections */}
     <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      <FeatureSection
+      {/* <FeatureSection
         image={ellipse}
         title="Introducing Sentient v1: Our Flagship AI Model"
         description="Sentient v1 is a groundbreaking AI model capable of advanced language understanding, complex problem-solving, and real-time data processing. It's built to empower researchers and developers to explore new frontiers in AI."
-      />
-      <FeatureSection
-        image={numbers}
-        title="Voxpal-The LLM language speaking model powered by Sentient v1"
-        description="Our research lab is at the forefront of AI innovation, focusing on the development of scalable AI models, ethical AI practices, and breakthrough technologies that push the boundaries of what AI can achieve."
-      />
-      <FeatureSection
-        image={walls}
-        title="Pagernode - Sentient v1 powered solution for Product teams to streamline their workflows within their organizations"
-        description="From healthcare to finance, our custom AI solutions are tailored to solve specific challenges in various industries, leveraging the power of Sentient v1 to deliver unparalleled results."
-      />
+        linkTo="/products/sentient-v1" // Link to the individual product page
+      /> */}
       <FeatureSection
         image={corp}
         title="CodeWhisperer"
-        description="CodeWhisperer is a cutting-edge coding solution designed to help individuals learn programming through the power of Large Language Models (LLMs)"
+        description="CodeWhisperer is a cutting-edge coding solution designed to help individuals learn programming through the power of Large Language Models (LLMs)."
+        linkTo="/products/codewhisperer" // Link to the individual product page
       />
     </section>
   </div>

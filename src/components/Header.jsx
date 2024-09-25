@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-// import logo from '../../public/logo (2).png'
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,13 +24,13 @@ const Header = () => {
       <header className="bg-black shadow-md relative z-50">
         <nav className="container mx-auto px-4 py-5 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-white">
+          <Link to="/" className="text-2xl font-bold text-gray-300">
            SentientMind
           </Link>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8 relative">
-            <Link to="/research" className="text-gray-300 hover:text-white transition duration-200">Research</Link>
+            <Link to="/research" className="text-gray-500 hover:text-white transition duration-200">Research</Link>
             <Link to="/products" className="text-gray-300 hover:text-white transition duration-200">Products</Link>
 
             {/* Company Dropdown */}

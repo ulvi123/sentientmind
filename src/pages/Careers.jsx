@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import girl from "../../public/girl.jpg";
 
 const Careers = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const jobSectionRef = useRef(null); // Create a ref for the job section
+
+  // Function to handle scrolling to the job section
+  const handleViewAllJobs = () => {
+    jobSectionRef.current.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section smoothly
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -36,6 +42,7 @@ const Careers = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="bg-white text-black font-semibold py-3 px-8 rounded-full transition duration-300"
+            onClick={handleViewAllJobs} // Attach scroll handler
           >
             View all jobs
           </motion.button>
@@ -47,15 +54,18 @@ const Careers = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            src={girl} // Replace with your actual image URL
+            src={girl}
             alt="Join Our Team"
-            className="max-w-full max-h-[400px] md:max-h-[600px] rounded-lg shadow-lg object-cover"
+            className="max-w-full max-h-[400px] md:max-h-[500px] rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
 
       {/* Open Positions Section */}
-      <section className="bg-black py-16 px-8">
+      <section
+        ref={jobSectionRef} // Attach ref to this section
+        className="bg-black py-16 px-8"
+      >
         <h2 className="text-3xl font-bold mb-6 text-center">Current Openings</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
           {/* Example Job Cards */}

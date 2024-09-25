@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "../App.css";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -93,23 +94,41 @@ const KeyFeatures = () => {
 };
 
 // Client Logos Section
-const ClientsSection = () => (
-  <section className="py-24 bg-black text-center">
-    <Container>
-      <h2 className="text-3xl font-bold mb-8 text-white">
-        Trusted by Leading Organizations
-      </h2>
-      <div className="flex flex-wrap justify-center items-center gap-8">
-        {/* Replace with actual client logos */}
-        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
-        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
-        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
-        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
-        <div className="h-16 w-40 bg-gray-700 rounded-lg"></div>
-      </div>
-    </Container>
-  </section>
-);
+// Client Logos Section with Infinite Scroll
+const ClientsSection = () => {
+  // List of client logos (replace with actual logo URLs)
+  const logos = [
+    'logo1.png',
+    'logo2.png',
+    'logo3.png',
+    'logo4.png',
+    'logo5.png',
+  ];
+
+  // Duplicate logos to create an infinite scrolling effect
+  const infiniteLogos = [...logos, ...logos];
+
+  return (
+    <section className="py-24 bg-black text-center overflow-hidden">
+      <Container>
+        <h2 className="text-3xl font-bold mb-8 text-white">
+          Trusted by Leading Organizations
+        </h2>
+        <div className="relative w-full overflow-hidden">
+          <div className="flex animate-marquee space-x-8">
+            {infiniteLogos.map((logo, index) => (
+              <div key={index} className="flex-none h-16 w-40 bg-gray-700 rounded-lg">
+                {/* Replace with actual image tags once you have the URLs */}
+                <img src={logo} alt={`Client Logo ${index}`} className="h-full w-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
 
 // Use Cases Section
 const UseCasesSection = () => (

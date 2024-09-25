@@ -13,6 +13,7 @@ import ContactPage from "./components/ContactForm";
 import Careers from "./pages/Careers";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
+import CodeWhisperer from "./pages/CodeWhisperer";
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/codewhisperer" element={<CodeWhisperer/>}/>
+            {/* <Route path="/products/sentient-v1" element={<SentientV1 />} /> */}
             <Route path="/company" element={<Company />} />
             <Route path="/company/careers" element={<Careers />} />
             <Route path="/company/about" element={<About />} />
