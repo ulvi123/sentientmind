@@ -3,7 +3,6 @@
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-// import codeImg from "../../public/code.jpg";
 import deploymentImg from "../../public/deploymentImg.png";
 import monitorImg from "../../public/monitorImg.png";
 import developerImg from "../../public/developerImg.png";
@@ -33,15 +32,15 @@ const Step = ({ image, step, title, description }) => (
       <p className="text-lg text-gray-300">{description}</p>
     </div>
     <div className="flex-1">
-      <img src={image} alt={title} className="w-full max-w-md mx-auto rounded-lg shadow-lg" />
+      <img src={image} alt={title} classname="w-full max-w-md mx-auto rounded-lg shadow-lg" />
     </div>
   </motion.div>
 );
 
-// Main CodeWhisperer Component
+// main codewhisperer component
 const CodeWhisperer = () => (
   <div className="bg-black text-white min-h-screen">
-    {/* Hero Section */}
+    {/* hero section */}
     <section className="w-full py-20 px-6 text-center bg-black">
       <div className="max-w-4xl mx-auto">
         <motion.h1
@@ -50,10 +49,10 @@ const CodeWhisperer = () => (
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold mb-4"
         >
-          CodeWhisperer: Your AI Code Assistant
+          Hugo: Your own personal "Senior Software Engineer" 
         </motion.h1>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-          Whether you're a beginner or an experienced developer, CodeWhisperer is your next-gen AI code assistant, guiding you from writing your first line of code to deploying scalable applications effortlessly.
+          Whether you're a beginner or an experienced developer, Hugo is your next-gen AI code assistant, guiding you from writing your first line of code to deploying scalable applications effortlessly.
         </p>
         <motion.div
           className="flex justify-center space-x-4"
@@ -134,7 +133,7 @@ const CodeWhisperer = () => (
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-xl text-gray-300 mb-4">
-            "CodeWhisperer has completely transformed my coding workflow. The AI suggestions are spot on, and the real-time monitoring is a game changer!"
+            "Hugo has completely transformed my coding workflow. The AI suggestions are spot on, and the real-time monitoring is a game changer!"
           </p>
           <p className="text-gray-500">— Jane Doe, Full-stack Developer</p>
         </motion.div>

@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 
 import { motion } from 'framer-motion';
-// import ellipse from "../../public/explosion.jpg";
+import ellipse from "../../public/explosion.jpg";
 import corp from "../../public/corp.jpg";
 import { Link } from 'react-router-dom';
 
@@ -54,12 +54,12 @@ const Products = () => (
 
     {/* Vertical Stacked Feature Sections */}
     <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      {/* <FeatureSection
+      <FeatureSection
         image={ellipse}
         title="Introducing Sentient v1: Our Flagship AI Model"
         description="Sentient v1 is a groundbreaking AI model capable of advanced language understanding, complex problem-solving, and real-time data processing. It's built to empower researchers and developers to explore new frontiers in AI."
         linkTo="/products/sentient-v1" // Link to the individual product page
-      /> */}
+      />
       <FeatureSection
         image={corp}
         title="CodeWhisperer"
