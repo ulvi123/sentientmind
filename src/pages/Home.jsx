@@ -2,6 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import HighlightedFeatures from "../components/HighlightedFeatures";
+import {
+  CodeIcon,
+  LockClosedIcon,
+  DeviceMobileIcon,
+  TrendingUpIcon,
+} from "@heroicons/react/outline";
 
 // Components for Basic Layouts
 const Container = ({ children, className }) => (
@@ -14,7 +20,7 @@ const Divider = () => <div className="h-px bg-gray-700 my-12"></div>;
 
 // Hero Section
 const HeroSection = () => (
-  <section className="relative py-32 bg-gradient-to-r from-black to-gray-900 text-center">
+  <section className="relative py-32 bg-gradient-to-r  text-center">
     <Container>
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
@@ -55,58 +61,68 @@ const HeroSection = () => (
   </section>
 );
 
-// Key Features Section
+// Highlighted Features Section
+
+
 const KeyFeatures = () => {
   const features = [
     {
       title: "Custom AI Models",
-      description: "Develop advanced AI models tailored to your specific needs, empowering businesses to innovate.",
-      icon: "🧠",
+      description:
+        "Develop advanced AI models tailored to your specific needs, empowering businesses to innovate.",
+      icon: <CodeIcon className="h-12 w-12 text-blue-500" />,
     },
     {
       title: "Data Privacy",
-      description: "Ensuring maximum security and privacy with enterprise-grade solutions for data protection.",
-      icon: "🔒",
+      description:
+        "Ensuring maximum security and privacy with enterprise-grade solutions for data protection.",
+      icon: <LockClosedIcon className="h-12 w-12 text-blue-500" />,
     },
     {
       title: "Integration Ready",
-      description: "Seamless integration with existing systems to maximize productivity and reduce downtime.",
-      icon: "🔗",
+      description:
+        "Seamless integration with existing systems to maximize productivity and reduce downtime.",
+      icon: <DeviceMobileIcon className="h-12 w-12 text-blue-500" />,
     },
     {
       title: "Scalable Solutions",
-      description: "Our AI platforms grow with your business, ensuring long-term value and adaptability.",
-      icon: "📈",
+      description:
+        "Our AI platforms grow with your business, ensuring long-term value and adaptability.",
+      icon: <TrendingUpIcon className="h-12 w-12 text-blue-500" />,
     },
   ];
 
   return (
     <section className="py-24 bg-black">
-      <Container>
-        <h2 className="text-4xl font-bold text-center mb-16 text-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
           Cutting-Edge Features
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
+              className="flex items-start space-x-6 p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="text-center bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">
-                {feature.title}
-              </h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <div className="flex-shrink-0">{feature.icon}</div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-2 text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
+
 
 // Client Logos Section with Infinite Scroll
 const ClientsSection = () => {
@@ -332,7 +348,7 @@ const Home = () => (
     <HeroSection />
     <KeyFeatures />
     <HighlightedFeatures />
-    <ClientsSection />
+    {/* <ClientsSection /> */}
     <UseCasesSection />
     <TestimonialsSection />
     <CTASection />

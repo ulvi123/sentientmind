@@ -1,48 +1,57 @@
-// src/components/HighlightedFeatures.js
-
-
+import React from "react";
 import { motion } from "framer-motion";
+import {
+  SparklesIcon,
+  ShieldCheckIcon,
+  LightningBoltIcon,
+} from "@heroicons/react/outline";
 
-// Highlighted Features Component
 const HighlightedFeatures = () => {
   const features = [
     {
-      title: "Custom AI Models",
+      title: "Innovative AI Models",
       description:
-        "Develop advanced AI models tailored to your specific needs, empowering businesses to innovate.",
+        "Leverage cutting-edge AI technology customized to your business needs.",
+      icon: <SparklesIcon className="h-12 w-12 text-blue-500" />,
     },
     {
-      title: "Data Privacy",
+      title: "Robust Data Security",
       description:
-        "Ensuring maximum security and privacy with enterprise-grade solutions for data protection.",
+        "Protect your data with enterprise-grade security and privacy measures.",
+      icon: <ShieldCheckIcon className="h-12 w-12 text-blue-500" />,
     },
     {
-      title: "Integration Ready",
+      title: "Seamless Integration",
       description:
-        "Seamless integration with existing systems to maximize productivity and reduce downtime.",
+        "Integrate effortlessly with your existing systems for maximum efficiency.",
+      icon: <LightningBoltIcon className="h-12 w-12 text-blue-500" />,
     },
   ];
 
   return (
-    <section className="mb-16">
-      <h2 className="text-4xl font-bold text-white mb-8 text-center">
-        Highlighted Features
-      </h2>
-      <div className="grid md:grid-cols-3 gap-10">
-        {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            className="p-8 bg-gray-900 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-          >
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              {feature.title}
-            </h3>
-            <p className="text-gray-400">{feature.description}</p>
-          </motion.div>
-        ))}
+    <section className="py-24 bg-black">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Highlighted Features
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              <div className="flex-shrink-0 mb-4">{feature.icon}</div>
+              <h3 className="text-2xl font-semibold mb-2 text-white">
+                {feature.title}
+              </h3>
+              <p className="text-gray-300">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

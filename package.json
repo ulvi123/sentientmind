@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "accordion": "^3.0.2",
     "framer-motion": "^11.11.8",
     "lucide-react": "^0.439.0",
