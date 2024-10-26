@@ -3,9 +3,9 @@
 
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import deploymentImg from "../../public/deploymentImg.png";
-import monitorImg from "../../public/monitorImg.png";
-import developerImg from "../../public/developerImg.png";
+import simulation from "../../public/onb3.png";
+import devops from "../../public/ci-cd.png";
+import cliImg from "../../public/cli.png";
 
 // Key Feature Component
 const KeyFeature = ({ title, description }) => (
@@ -22,17 +22,17 @@ const KeyFeature = ({ title, description }) => (
 // How It Works Step Component
 const Step = ({ image, step, title, description }) => (
   <motion.div
-    className="flex flex-col md:flex-row items-center justify-between mb-16"
+    className="flex flex-col md:flex-row items-center justify-between mb-16 md:space-x-8"
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8 }}
   >
     <div className="flex-1 text-center md:text-left md:max-w-lg mb-6 md:mb-0">
-      <h3 className="text-2xl font-semibold mb-2 text-white">{step}. {title}</h3>
-      <p className="text-lg text-gray-300">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-white">{step}. {title}</h3>
+      <p className="text-2xl  text-gray-300">{description}</p>
     </div>
-    <div className="flex-1">
-      <img src={image} alt={title} classname="w-full max-w-md mx-auto rounded-lg shadow-lg" />
+    <div className="flex-1 flex items-center justify-center">
+      <img src={image} alt={title} classname="w-full h-full max-w-md mx-auto rounded-lg shadow-lg " />
     </div>
   </motion.div>
 );
@@ -49,10 +49,10 @@ const CodeWhisperer = () => (
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold mb-4"
         >
-          Hugo: Your own personal "Senior Software Engineer" 
+          Hail Valkyrie : <br/><br/>Your own personal "Senior Software Engineer" 
         </motion.h1>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-          Whether you're a beginner or an experienced developer, Hugo is your next-gen AI code assistant, guiding you from writing your first line of code to deploying scalable applications effortlessly.
+          Whether you're a beginner or an experienced developer, "Valkyrie"  is your next-gen AI code assistant, guiding you from writing your first line of code to deploying scalable applications effortlessly.
         </p>
         <motion.div
           className="flex justify-center space-x-4"
@@ -103,24 +103,26 @@ const CodeWhisperer = () => (
 
     {/* How It Works Section */}
     <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
+      <h2 className="text-6xl font-bold text-center mb-12">How It Works</h2>
       <Step
         step="1"
-        image={developerImg}
-        title="Write & Learn"
-        description="CodeWhisperer provides intelligent code suggestions, enabling you to write better code faster. Whether you're learning or refining your skills, CodeWhisperer helps you along the way."
+        image={cliImg}
+        title="Unified CLI and native Code editor"
+        description="Valkyrie takes care of every line you write and provides intelligent code suggestions, enabling you to write better code faster. 
+        Whether you're a beginner or a seasoned developer, you would need a trusted 'ally' by your side."
       />
       <Step
         step="2"
-        image={monitorImg}
-        title="Monitor & Debug"
-        description="Track your code’s behavior in real-time. Identify bugs, receive AI-driven recommendations for fixes, and maintain code quality throughout your development process."
+        image={devops}
+        title="Inregrations with your PM and CI/CD tools"
+        description="When you decide to deploy your codebase, it track your code’s behavior in real-time.With its awareness it identify bugs, delivers  AI-driven recommendations for fixes, and maintain code quality throughout your development process."
       />
       <Step
         step="3"
-        image={deploymentImg}
-        title="Deploy & Scale"
-        description="With integrated deployment tools, you can effortlessly take your project from code to production, ensuring that your application is optimized and scalable."
+        image={simulation}
+        title="Learning,onboarding and experimenting, at your own pace"
+        description="Being an engineer requires deep understanding of non-stop learning.Even if you already work, you still need to adapt to new tech being evolved.
+        Valkyirie, becomes the best assistant here, by constantly challenging you with new learning modules,simulations and projects, to develop your technical skills"
       />
     </section>
 
@@ -133,9 +135,9 @@ const CodeWhisperer = () => (
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-xl text-gray-300 mb-4">
-            "Hugo has completely transformed my coding workflow. The AI suggestions are spot on, and the real-time monitoring is a game changer!"
+            "This tool has completely transformed my coding workflow. The AI suggestions are spot on, and the real-time monitoring is a game changer!"
           </p>
-          <p className="text-gray-500">— Jane Doe, Full-stack Developer</p>
+          <p className="text-gray-500">— Mart Jurvo, Full-stack Developer</p>
         </motion.div>
         <motion.div
           className="p-8 bg-gray-800 shadow-lg rounded-lg"
@@ -144,7 +146,7 @@ const CodeWhisperer = () => (
           <p className="text-xl text-gray-300 mb-4">
             "From learning new programming languages to deploying code in real-time, CodeWhisperer has become an indispensable tool in my toolkit."
           </p>
-          <p className="text-gray-500">— John Smith, AI Researcher</p>
+          <p className="text-gray-500">— Jaanis Kurtis, AI Researcher</p>
         </motion.div>
       </div>
     </section>
