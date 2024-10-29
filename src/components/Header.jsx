@@ -55,6 +55,8 @@ const Header = () => {
                     <Link to="/company/careers" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200">Careers</Link>
                     <Link to="/company/security" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200">Security & Privacy</Link>
                     <Link to="/company/about" className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200">About Us</Link>
+                    <Link to="/company/api" className='block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200'>API</Link>
+                    <Link to="/company/pricing" className='block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-200'>Pricing</Link>
                   </motion.div>
                 )}
               </AnimatePresence>

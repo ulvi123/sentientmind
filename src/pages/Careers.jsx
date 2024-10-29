@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 import girl from "../../public/girl.jpg";
+import { Link } from 'react-router-dom';
 
 const Careers = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -75,7 +76,7 @@ const Careers = () => {
           >
             <h3 className="text-2xl font-semibold text-white mb-2">Machine Learning Engineer</h3>
             <p className="text-gray-300 mb-4">Remote or On-site, New York</p>
-            <button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button>
+            <Link to="/contact"><button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button></Link>
           </motion.div>
           {/* Additional Job Cards */}
           <motion.div
@@ -84,7 +85,7 @@ const Careers = () => {
           >
             <h3 className="text-2xl font-semibold text-white mb-2">AI Product Manager</h3>
             <p className="text-gray-300 mb-4">San Francisco, CA or Remote</p>
-            <button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button>
+            <Link to="/contact"><button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button></Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -92,7 +93,7 @@ const Careers = () => {
           >
             <h3 className="text-2xl font-semibold text-white mb-2">AI Researcher</h3>
             <p className="text-gray-300 mb-4">San Francisco, CA or Remote</p>
-            <button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button>
+            <Link to="/contact"><button className="bg-white text-black py-2 px-4 rounded-full">Apply Now</button></Link>
           </motion.div>
           {/* Repeat for additional job cards */}
         </div>

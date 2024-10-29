@@ -11,7 +11,10 @@ import SoftwareEngineering from "./pages/SoftwareEngineering";
 import Healthcare from "./pages/Healthcare";
 import ContactPage from "./components/ContactForm";
 import Careers from "./pages/Careers";
+import News from "./pages/News";
 import About from "./pages/About";
+import ApiPage from "./pages/Api";
+import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import CodeWhisperer from "./pages/CodeWhisperer";
 
@@ -31,11 +34,13 @@ const App = () => {
             <Route path="/research" element={<Research />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/codewhisperer" element={<CodeWhisperer/>}/>
-            {/* <Route path="/products/sentient-v1" element={<SentientV1 />} /> */}
             <Route path="/company" element={<Company />} />
             <Route path="/company/careers" element={<Careers />} />
+            <Route path="/company/news" element ={<News />} />
             <Route path="/company/about" element={<About />} />
             <Route path="/company/security" element={<Privacy />} />
+            <Route path="/company/api" element={<ApiPage/>}/>
+            <Route path="/company/pricing" element={<Pricing/>}/>
             <Route path="/education" element={<Education />} />
             <Route
               path="/software-engineering"
