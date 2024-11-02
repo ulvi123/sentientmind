@@ -17,6 +17,8 @@ import ApiPage from "./pages/Api";
 import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import CodeWhisperer from "./pages/CodeWhisperer";
+import SentientV1 from "./pages/SentientV1";
+import Documentation from "./pages/Documentation"
 
 const App = () => {
   return (
@@ -33,7 +35,9 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/research" element={<Research />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/docs" element={<Documentation/>}/>
             <Route path="/products/codewhisperer" element={<CodeWhisperer/>}/>
+            <Route path="/products/sentient-v1" element={<SentientV1 />} />
             <Route path="/company" element={<Company />} />
             <Route path="/company/careers" element={<Careers />} />
             <Route path="/company/news" element ={<News />} />

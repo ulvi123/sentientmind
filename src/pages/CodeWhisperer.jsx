@@ -7,167 +7,182 @@ import simulation from "../../public/onb3.png";
 import devops from "../../public/ci-cd.png";
 import cliImg from "../../public/cli.png";
 
-// Key Feature Component
-const KeyFeature = ({ title, description }) => (
+// Enhanced components...
+const KeyFeature = ({ title, description, icon }) => (
   <motion.div
-    className="bg-gray-800 p-6 rounded-lg shadow-lg"
-    whileHover={{ scale: 1.05 }}
+    className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl shadow-2xl border border-gray-700/50"
+    whileHover={{ scale: 1.03, y: -5 }}
     transition={{ duration: 0.3 }}
   >
-    <h3 className="text-2xl font-semibold mb-4 text-white">{title}</h3>
-    <p className="text-gray-300">{description}</p>
+    <div className="flex flex-col h-full">
+      <div className="text-blue-400 mb-4">{icon}</div>
+      <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">{title}</h3>
+      <p className="text-gray-300 leading-relaxed">{description}</p>
+    </div>
   </motion.div>
 );
 
-// How It Works Step Component
-const Step = ({ image, step, title, description }) => (
+const Step = ({ step, image, title, description }) => (
   <motion.div
-    className="flex flex-col md:flex-row items-center justify-between mb-16 md:space-x-8"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
+    className="flex flex-col md:flex-row items-center gap-12 mb-24"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
   >
-    <div className="flex-1 text-center md:text-left md:max-w-lg mb-6 md:mb-0">
-      <h3 className="text-xl font-semibold mb-2 text-white">{step}. {title}</h3>
-      <p className="text-2xl  text-gray-300">{description}</p>
+    <div className="flex-1">
+      <div className="flex items-center mb-4">
+        <span className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">{step}</span>
+        <div className="w-12 h-[2px] bg-gradient-to-r from-blue-400 to-purple-500 ml-4"></div>
+      </div>
+      <h3 className="text-3xl font-bold mb-4 text-white">{title}</h3>
+      <p className="text-xl text-gray-300 leading-relaxed">{description}</p>
     </div>
-    <div className="flex-1 flex items-center justify-center">
-      <img src={image} alt={title} classname="w-full h-full max-w-md mx-auto rounded-lg shadow-lg " />
-    </div>
+    <motion.div 
+      className="flex-1"
+      whileHover={{ scale: 1.05 }}
+    >
+      <img src={image} alt={title} className="rounded-2xl shadow-2xl border border-gray-700/50" />
+    </motion.div>
   </motion.div>
 );
 
-// main codewhisperer component
 const CodeWhisperer = () => (
   <div className="bg-black text-white min-h-screen">
-    {/* hero section */}
-    <section className="w-full py-20 px-6 text-center bg-black">
-      <div className="max-w-4xl mx-auto">
-        <motion.h1
+    {/* Hero Section */}
+    <section className="relative py-32 px-6 bg-gradient-to-b from-blue-900/20 to-black">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+      <div className="relative max-w-6xl mx-auto text-center">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-bold mb-4"
         >
-          Hail Valkyrie : <br/><br/>Your own personal "Senior Software Engineer" 
-        </motion.h1>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-          Whether you're a beginner or an experienced developer, "Valkyrie"  is your next-gen AI code assistant, guiding you from writing your first line of code to deploying scalable applications effortlessly.
-        </p>
-        <motion.div
-          className="flex justify-center space-x-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          <button className="bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300">
-            <Link to="/products">Explore Products</Link>
-          </button>
-          <button className="text-white font-semibold py-2 px-6 border border-white rounded-full hover:bg-white hover:text-black transition duration-300">
-            <Link to="/contact">Request a Demo</Link>
-          </button>
+          <h1 className="text-7xl font-bold mb-6">
+            Code Smarter with <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Valkyrie</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            Your AI-powered coding companion that helps you write better code faster.
+            From smart suggestions to automated reviews, we've got you covered.
+          </p>
         </motion.div>
+        <div className="flex justify-center gap-6">
+          <Link to="/contact" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-8 rounded-full hover:opacity-90 transition">
+            Try Demo
+          </Link>
+          <Link to="/company/pricing" className="bg-transparent border-2 border-white text-white font-semibold py-4 px-8 rounded-full hover:bg-white hover:text-black transition">
+            View Pricing
+          </Link>
+        </div>
       </div>
     </section>
 
-    {/* Expanded Key Features Section */}
-    <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-12">Key Features</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+    {/* Features Section */}
+    <section className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Key Features
+        </h2>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <KeyFeature
           title="AI Code Suggestions"
-          description="Receive real-time AI-driven code suggestions to speed up your coding process, whether you're writing simple scripts or complex algorithms."
+          description="Get intelligent code completions and suggestions in real-time."
+          icon={<i className="fas fa-robot text-3xl" />}
         />
         <KeyFeature
-          title="Personalized Learning Paths"
-          description="Tailor-made learning paths based on your experience level, helping you master new programming languages and frameworks with interactive lessons."
+          title="Smart Debugging"
+          description="Identify and fix bugs faster with AI-powered analysis."
+          icon={<i className="fas fa-bug text-3xl" />}
         />
         <KeyFeature
-          title="AI-Powered Code Reviews"
-          description="Instantly receive AI-powered feedback on your code quality, best practices, and optimizations, helping you write more efficient and clean code."
-        />
-        <KeyFeature
-          title="Real-Time Collaboration"
-          description="Collaborate with team members in real-time, using CodeWhisperer’s integrated coding environment for pair programming and collaborative debugging."
-        />
-        <KeyFeature
-          title="Gamified Challenges"
-          description="Practice coding by completing gamified challenges designed to help you learn through fun, competition, and real-world problem-solving scenarios."
-        />
-        <KeyFeature
-          title="Deployment Made Easy"
-          description="Seamlessly deploy your code with integrated tools that simplify testing, optimization, and deployment workflows."
+          title="Team Collaboration"
+          description="Built-in tools for seamless team collaboration."
+          icon={<i className="fas fa-users text-3xl" />}
         />
       </div>
     </section>
 
-    {/* How It Works Section */}
-    <section className="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
-      <h2 className="text-6xl font-bold text-center mb-12">How It Works</h2>
+    {/* Steps Section */}
+    <section className="py-24 px-6 max-w-7xl mx-auto">
       <Step
-        step="1"
+        step="01"
         image={cliImg}
-        title="Unified CLI and native Code editor"
-        description="Valkyrie takes care of every line you write and provides intelligent code suggestions, enabling you to write better code faster. 
-        Whether you're a beginner or a seasoned developer, you would need a trusted 'ally' by your side."
+        title="Unified Development Environment"
+        description="Seamlessly integrate with your existing workflow and get intelligent assistance right where you need it."
       />
       <Step
-        step="2"
-        image={devops}
-        title="Inregrations with your PM and CI/CD tools"
-        description="When you decide to deploy your codebase, it track your code’s behavior in real-time.With its awareness it identify bugs, delivers  AI-driven recommendations for fixes, and maintain code quality throughout your development process."
-      />
-      <Step
-        step="3"
+        step="02"
         image={simulation}
-        title="Learning,onboarding and experimenting, at your own pace"
-        description="Being an engineer requires deep understanding of non-stop learning.Even if you already work, you still need to adapt to new tech being evolved.
-        Valkyirie, becomes the best assistant here, by constantly challenging you with new learning modules,simulations and projects, to develop your technical skills"
+        title="Real-Time AI Assistance"
+        description="Experience intelligent code suggestions and documentation as you type."
+      />
+      <Step
+        step="03"
+        image={devops}
+        title="Automated DevOps"
+        description="Streamline your deployment process with AI-powered automation."
       />
     </section>
 
     {/* Testimonials Section */}
-    <section className="py-20 px-6 bg-gray-900 text-center">
-      <h2 className="text-4xl font-bold mb-12 text-white">What Developers Are Saying</h2>
-      <div className="grid md:grid-cols-2 gap-12">
-        <motion.div
-          className="p-8 bg-gray-800 shadow-lg rounded-lg"
-          whileHover={{ scale: 1.05 }}
-        >
-          <p className="text-xl text-gray-300 mb-4">
-            "This tool has completely transformed my coding workflow. The AI suggestions are spot on, and the real-time monitoring is a game changer!"
-          </p>
-          <p className="text-gray-500">— Mart Jurvo, Full-stack Developer</p>
-        </motion.div>
-        <motion.div
-          className="p-8 bg-gray-800 shadow-lg rounded-lg"
-          whileHover={{ scale: 1.05 }}
-        >
-          <p className="text-xl text-gray-300 mb-4">
-            "From learning new programming languages to deploying code in real-time, CodeWhisperer has become an indispensable tool in my toolkit."
-          </p>
-          <p className="text-gray-500">— Jaanis Kurtis, AI Researcher</p>
-        </motion.div>
+    <section className="py-24 px-6 bg-gradient-to-b from-gray-900 to-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Loved by Developers
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12">
+          <motion.div
+            className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-gray-700/50"
+            whileHover={{ scale: 1.03 }}
+          >
+            <p className="text-xl text-gray-300 mb-6">
+              "Valkyrie has transformed our development process. The AI suggestions are incredibly accurate."
+            </p>
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-4"></div>
+              <div>
+                <p className="font-semibold text-white">Sarah Chen</p>
+                <p className="text-gray-400">Senior Developer</p>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            className="p-8 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-gray-700/50"
+            whileHover={{ scale: 1.03 }}
+          >
+            <p className="text-xl text-gray-300 mb-6">
+              "It's like having an extra senior developer on the team. Invaluable for maintaining code quality."
+            </p>
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-4"></div>
+              <div>
+                <p className="font-semibold text-white">Marcus Rodriguez</p>
+                <p className="text-gray-400">Tech Lead</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
 
-    {/* Call to Action Section */}
-    <section className="py-20 bg-black text-center">
-      <motion.h2
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold mb-6 text-white"
-      >
-        Ready to start coding with AI?
-      </motion.h2>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="bg-white text-black font-semibold py-3 px-8 rounded-full transition-transform duration-300"
-      >
-        <Link to="/contact">Get Started</Link>
-      </motion.button>
+    {/* CTA Section */}
+    <section className="py-24 px-6 bg-gradient-to-t from-blue-900/20 to-black text-center">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Ready to Transform Your Workflow?
+        </h2>
+        <p className="text-xl text-gray-300 mb-12">
+          Join thousands of developers who are already coding smarter, not harder.
+        </p>
+        <Link 
+          to="/pricing"
+          className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 px-12 py-4 rounded-full text-white font-semibold hover:opacity-90 transition"
+        >
+          Get Started Now
+        </Link>
+      </div>
     </section>
   </div>
 );

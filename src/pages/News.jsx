@@ -7,18 +7,19 @@ const News = ({ articles }) => {
   return (
     <div className="min-h-screen pt-20 pb-16 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-7xl mx-auto px-6">
+        <h1 className="text-4xl font-bold text-white text-center mb-8">Latest News</h1>
         {articles && articles.length > 0 ? (
-          <div className="grid gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <div key={index} className="flex border border-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+              <div key={index} className="flex flex-col border border-gray-700 rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
                 <img 
                   src={article.imageUrl} 
                   alt={article.title} 
-                  className="w-48 h-36 object-cover transition-opacity duration-300 hover:opacity-80" 
+                  className="w-full h-48 object-cover transition-opacity duration-300 hover:opacity-80" 
                 />
-                <div className="p-4 flex flex-col">
+                <div className="p-4 flex flex-col flex-grow">
                   <h2 className="text-xl font-bold mb-2 text-white">{article.title}</h2>
-                  <p className="mb-4 text-gray-300">{article.description}</p>
+                  <p className="mb-4 text-gray-300 flex-grow">{article.description}</p>
                   <a 
                     href={article.link} 
                     className="text-blue-400 font-semibold hover:underline transition-colors duration-300" 

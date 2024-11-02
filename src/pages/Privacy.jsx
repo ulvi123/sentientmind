@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { ShieldCheckIcon, LockClosedIcon, InformationCircleIcon } from '@heroicons/react/outline';
 
 // Accordion Component
 const Accordion = ({ title, children }) => {
@@ -10,12 +11,13 @@ const Accordion = ({ title, children }) => {
     <div className="mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left bg-gray-800 text-white px-4 py-2 rounded-md shadow-md flex justify-between items-center"
+        className="w-full text-left bg-gray-800 text-white px-4 py-3 rounded-md shadow-md flex justify-between items-center transition duration-300 hover:bg-gray-700"
       >
         <span className="text-lg font-semibold">{title}</span>
         <motion.span
           animate={{ rotate: isOpen ? 90 : 0 }}
           transition={{ duration: 0.2 }}
+          className="text-gray-400"
         >
           ▶
         </motion.span>
@@ -37,17 +39,17 @@ const Accordion = ({ title, children }) => {
 // Main Privacy and Security Page
 function Privacy() {
   return (
-    <div className="bg-black text-white min-h-screen py-16">
+    <div className="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-12"
+          className="mb-12 text-center"
         >
-          <h1 className="text-5xl font-bold mb-6 text-center">Privacy and Security</h1>
-          <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+          <h1 className="text-6xl font-extrabold mb-6">Privacy and Security</h1>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             At SentientMind, your privacy and security are our top priorities. We are committed to safeguarding your personal data and ensuring transparency about how we handle your information.
           </p>
         </motion.div>
@@ -86,15 +88,15 @@ function Privacy() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-4 text-center">Key Privacy Statistics</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
               <p className="text-4xl font-bold text-white">99.9%</p>
               <p className="text-gray-300">Data Encryption Uptime</p>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
               <p className="text-4xl font-bold text-white">100+</p>
               <p className="text-gray-300">Annual Security Audits</p>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
               <p className="text-4xl font-bold text-white">0</p>
               <p className="text-gray-300">Data Breaches in the Past Year</p>
             </motion.div>
