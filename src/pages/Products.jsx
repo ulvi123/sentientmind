@@ -94,7 +94,7 @@ const Products = () => (
           "Enterprise-grade security and scalability",
           "Customizable for specific industry needs"
         ]}
-        linkTo="/products/sentient-v1"
+        linkTo="/products/aimodel"
       />
       
       <ProductCard
