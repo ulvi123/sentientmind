@@ -18,7 +18,7 @@ import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import CodeWhisperer from "./pages/CodeWhisperer";
 import Documentation from "./pages/Documentation"
-import SentientV1 from "./pages/SentientV1"; // Ensure this matches the file name exactly
+// import SentientV1 from "./pages/SentientV1"; // Ensure this matches the file name exactly
 
 
 
@@ -39,7 +39,7 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/docs" element={<Documentation/>}/>
             <Route path="/products/codewhisperer" element={<CodeWhisperer/>}/>
-            <Route path="/products/sentient-v1" element={<SentientV1 />} />
+            {/* <Route path="/products/sentient-v1" element={<SentientV1 />} /> */}
             <Route path="/company" element={<Company />} />
             <Route path="/company/careers" element={<Careers />} />
             <Route path="/company/news" element ={<News />} />
