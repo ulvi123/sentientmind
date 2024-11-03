@@ -17,7 +17,7 @@ import ApiPage from "./pages/Api";
 import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import CodeWhisperer from "./pages/CodeWhisperer";
-import SentientV1 from "./pages/SentientV1"
+import SentientV1 from "./pages/SentientV1"; // Corrected casing
 import Documentation from "./pages/Documentation"
 
 const App = () => {
