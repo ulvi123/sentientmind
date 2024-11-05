@@ -37,13 +37,13 @@ const Footer = () => (
           <h3 className="font-semibold mb-4 text-2xl bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Support</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/support" className="hover:underline transition duration-300">Help Center</Link>
+              <Link to="/help" className="hover:underline transition duration-300">Help Center</Link>
             </li>
             <li>
               <Link to="/contact" className="hover:underline transition duration-300">Contact Us</Link>
             </li>
             <li>
-              <Link to="/privacy-policy" className="hover:underline transition duration-300">Privacy Policy</Link>
+              <Link to="/company/security" className="hover:underline transition duration-300">Privacy Policy</Link>
             </li>
           </ul>
         </div>

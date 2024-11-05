@@ -18,6 +18,7 @@ import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import CodeWhisperer from "./pages/CodeWhisperer";
 import Documentation from "./pages/Documentation"
+
 import Aimodel from "./pages/Aimodel";
 
 
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/company/api" element={<ApiPage/>}/>
             <Route path="/company/pricing" element={<Pricing/>}/>
             <Route path="/education" element={<Education />} />
+           
             <Route
               path="/software-engineering"
               element={<SoftwareEngineering />}

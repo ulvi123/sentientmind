@@ -71,10 +71,10 @@ const Products = () => (
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <Link to="/demo" className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300">
+          <Link to="/contact" className="bg-white text-black font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300">
             Request Demo
           </Link>
-          <Link to="/pricing" className="bg-transparent text-white font-semibold py-3 px-8 border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+          <Link to="/company/pricing" className="bg-transparent text-white font-semibold py-3 px-8 border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300">
             View Pricing
           </Link>
         </motion.div>

@@ -2,6 +2,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Nijat from "../assets/nijat.jpeg"
+import Ulvi from "../assets/uLVI.jpeg"
+import Eldar from "../assets/Eldar.jpeg"
 
 // Using placeholder images until you have actual ones
 import aboutImage from "/1.png";
@@ -341,27 +344,27 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
               {
-                name: 'Dr. Sarah Chen',
-                role: 'CEO & Co-founder',
-                image: 'https://placehold.co/400x400',
+                name: 'Ulvi',
+                role: 'CEO & Co-founder/Lead Engineer',
+                image: Ulvi,
                 bio: 'Former AI Research Lead at DeepMind',
                 achievements: ['Ph.D. in Machine Learning', '15+ years in AI', 'Forbes 30 Under 30'],
                 linkedin: '#',
                 twitter: '#'
               },
               {
-                name: 'Michael Rodriguez',
-                role: 'CTO & Co-founder',
-                image: 'https://placehold.co/400x400',
+                name: 'Nijat',
+                role: 'Head of ML & Co-founder/Software engineer',
+                image: Nijat,
                 bio: 'Previously built scalable AI systems at Google',
                 achievements: ['MS in Computer Science', '10+ years in Tech', 'Multiple Patents'],
                 linkedin: '#',
                 twitter: '#'
               },
               {
-                name: 'Dr. James Wilson',
-                role: 'Chief Scientist',
-                image: 'https://placehold.co/400x400',
+                name: 'Eldar',
+                role: 'Chief Data Officer and Co-founder',
+                image: Eldar,
                 bio: 'Pioneer in transformer architecture',
                 achievements: ['Ph.D. in AI', 'Published 50+ papers', 'ACM Fellow'],
                 linkedin: '#',

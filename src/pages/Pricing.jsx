@@ -1,6 +1,7 @@
 // sentientmind/src/pages/Pricing.jsx
 import { motion } from "framer-motion";
 import { useState } from "react";
+import {Link}  from "react-router-dom"
 
 function Pricing() {
   const [billingCycle, setBillingCycle] = useState('monthly');
@@ -159,7 +160,7 @@ function Pricing() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-16">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <motion.h1 
+        <motion.h1
           className="text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,7 +168,7 @@ function Pricing() {
         >
           Simple, Transparent Pricing
         </motion.h1>
-        <motion.p 
+        <motion.p
           className="text-xl text-gray-400 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -179,24 +180,22 @@ function Pricing() {
 
       {/* Billing Toggle */}
       <div className="flex justify-center mb-16">
-        <motion.div 
+        <motion.div
           className="bg-gray-800 p-1 rounded-xl inline-flex items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <button
-            className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-              billingCycle === 'monthly' ? 'bg-blue-600 text-white' : 'text-gray-400'
-            }`}
+            className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${billingCycle === 'monthly' ? 'bg-blue-600 text-white' : 'text-gray-400'
+              }`}
             onClick={() => setBillingCycle('monthly')}
           >
             Monthly
           </button>
           <button
-            className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-              billingCycle === 'annual' ? 'bg-blue-600 text-white' : 'text-gray-400'
-            }`}
+            className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${billingCycle === 'annual' ? 'bg-blue-600 text-white' : 'text-gray-400'
+              }`}
             onClick={() => setBillingCycle('annual')}
           >
             Annual (Save 20%)
@@ -210,9 +209,8 @@ function Pricing() {
           {pricingPlans[billingCycle].map((plan, index) => (
             <motion.div
               key={index}
-              className={`relative bg-black border ${
-                plan.highlighted ? 'border-blue-500' : 'border-gray-800'
-              } rounded-2xl p-8 hover:border-blue-500 transition-all duration-300`}
+              className={`relative bg-black border ${plan.highlighted ? 'border-blue-500' : 'border-gray-800'
+                } rounded-2xl p-8 hover:border-blue-500 transition-all duration-300`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -264,11 +262,10 @@ function Pricing() {
               </div>
 
               <button
-                className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  plan.highlighted
+                className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${plan.highlighted
                     ? 'bg-blue-600 hover:bg-blue-700'
                     : 'bg-gray-800 hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 {plan.ctaText}
               </button>
@@ -313,9 +310,12 @@ function Pricing() {
       <div className="text-center mt-24">
         <h2 className="text-2xl font-bold mb-4">Need Something Custom?</h2>
         <p className="text-gray-400 mb-8">Contact our sales team for custom enterprise solutions.</p>
-        <button className="bg-blue-600 px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-          Contact Sales
-        </button>
+        <Link to="/contact">
+          <button className="bg-blue-600 px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+            Contact Sales
+          </button>
+        </Link>
+
       </div>
     </div>
   );

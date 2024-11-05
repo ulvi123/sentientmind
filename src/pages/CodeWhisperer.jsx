@@ -177,7 +177,7 @@ const CodeWhisperer = () => (
           Join thousands of developers who are already coding smarter, not harder.
         </p>
         <Link 
-          to="/pricing"
+          to="/company/pricing"
           className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 px-12 py-4 rounded-full text-white font-semibold hover:opacity-90 transition"
         >
           Get Started Now

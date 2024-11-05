@@ -225,7 +225,7 @@ const ContactPage = () => (
           </div>
           <h3 className="font-semibold mb-2">Email</h3>
           <a href="mailto:info@sentientmind.ai" className="text-gray-400 hover:text-white transition-colors">
-            info@sentientmind.ai
+            info@sentientmind.io
           </a>
         </motion.div>
 
@@ -238,7 +238,7 @@ const ContactPage = () => (
           </div>
           <h3 className="font-semibold mb-2">Phone</h3>
           <a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">
-            +1 234 567 890
+            +372 539 57627
           </a>
         </motion.div>
 
@@ -251,8 +251,7 @@ const ContactPage = () => (
           </div>
           <h3 className="font-semibold mb-2">Location</h3>
           <p className="text-gray-400">
-            123 AI Research Blvd,<br />
-            Innovation City, CA 94016
+            San Francisco,CA 94016
           </p>
         </motion.div>
       </div>
