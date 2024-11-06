@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 import Nijat from "../assets/nijat.jpeg"
 import Ulvi from "../assets/uLVI.jpeg"
 import Eldar from "../assets/Eldar.jpeg"
+import founderImage from "../assets/founders.webp"
+import teamImage from "../assets/gg.avif"
+import labImage from "../assets/future.avif"
+import education from "../assets/education.avif"
+import health from "../assets/health.avif"
+import environment from "../assets/environment.avif"
+
 
 // Using placeholder images until you have actual ones
 import aboutImage from "/1.png";
@@ -211,7 +218,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src={founderImg}
+                src={founderImage}
                 alt="Our Founders"
                 className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
@@ -229,7 +236,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img
-                src={teamImg}
+                src={teamImage}
                 alt="Our Team"
                 className="rounded-2xl shadow-2xl w-full h-full object-cover"
               />
@@ -276,7 +283,7 @@ const About = () => {
           <div className="relative rounded-3xl overflow-hidden">
             <div className="absolute inset-0">
               <img
-                src={labImg}
+                src={labImage}
                 alt="AI Lab"
                 className="w-full h-full object-cover"
               />
@@ -301,7 +308,7 @@ const About = () => {
                     Join us in our mission to democratize AI and ensure its benefits are shared by all.
                   </p>
                 </div>
-                <Link to="/join">
+                <Link to="/contact">
                   <motion.button
                     className="mt-8 bg-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
                     whileHover={{ scale: 1.05 }}
@@ -609,7 +616,7 @@ const About = () => {
               {
                 title: "Revolutionizing Healthcare",
                 description: "Our AI models have helped hospitals reduce diagnosis time by 60% while improving accuracy to 99%.",
-                image: "https://placehold.co/800x400",
+                image: health,
                 stats: [
                   { label: "Diagnosis Time Reduced", value: "60%" },
                   { label: "Accuracy Rate", value: "99%" },
@@ -620,7 +627,7 @@ const About = () => {
               {
                 title: "Environmental Protection",
                 description: "AI-powered solutions helping organizations reduce their carbon footprint through smart resource optimization.",
-                image: "https://placehold.co/800x400",
+                image: environment,
                 stats: [
                   { label: "CO₂ Emissions Reduced", value: "500K tons" },
                   { label: "Energy Saved", value: "30%" },
@@ -631,7 +638,7 @@ const About = () => {
               {
                 title: "Education Transformation",
                 description: "Personalizing learning experiences for millions of students worldwide through adaptive AI technology.",
-                image: "https://placehold.co/800x400",
+                image: education,
                 stats: [
                   { label: "Students Reached", value: "2M+" },
                   { label: "Learning Efficiency", value: "+40%" },
