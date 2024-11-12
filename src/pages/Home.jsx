@@ -8,6 +8,7 @@ import {
   TrendingUpIcon,
 } from "@heroicons/react/outline";
 
+
 // Components for Basic Layouts
 const Container = ({ children, className }) => (
   <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
@@ -59,62 +60,66 @@ const HeroSection = () => (
 );
 
 // Key Features Section
+
+
 const KeyFeatures = () => {
   const features = [
     {
       title: "Custom AI Models",
       description:
         "Tailored AI models designed to meet your specific business needs.",
-      icon: <CodeIcon className="h-12 w-12 text-blue-600" />,
+      icon: <CodeIcon className="h-16 w-16 text-blue-500" />,
     },
     {
       title: "Data Privacy",
       description:
         "Enterprise-grade solutions ensuring maximum security and privacy.",
-      icon: <LockClosedIcon className="h-12 w-12 text-blue-600" />,
+      icon: <LockClosedIcon className="h-16 w-16 text-blue-500" />,
     },
     {
       title: "Integration Ready",
       description:
         "Seamless integration with existing systems to enhance productivity.",
-      icon: <DeviceMobileIcon className="h-12 w-12 text-blue-600" />,
+      icon: <DeviceMobileIcon className="h-16 w-16 text-blue-500" />,
     },
     {
       title: "Scalable Solutions",
       description:
         "AI platforms that grow with your business, ensuring long-term value.",
-      icon: <TrendingUpIcon className="h-12 w-12 text-blue-600" />,
+      icon: <TrendingUpIcon className="h-16 w-16 text-blue-500" />,
     },
   ];
 
   return (
-    <section className="py-24 bg-gray-900">
-      <Container>
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">
-          Key Features
+    <section className="py-24 bg-gradient-to-r ">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">
+          Unlock the Power of AI with Our Key Features
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center p-6 bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+              className="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <div className="flex-shrink-0 mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">
+              <div className="flex-shrink-0 mb-6">{feature.icon}</div>
+              <h3 className="text-2xl font-bold mb-4 text-blue-900">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 text-center">{feature.description}</p>
+              <p className="text-gray-600 text-center">{feature.description}</p>
             </motion.div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
+
+
 
 // Clients Section
 const ClientsSection = () => {
@@ -177,7 +182,7 @@ const UseCasesSection = () => {
   ];
 
   return (
-    <section id="usecases" className="py-24 bg-gray-900">
+    <section id="usecases" className="py-24 ">
       <Container>
         <h2 className="text-3xl font-bold text-center mb-16 text-white">
           Transforming Industries
@@ -260,7 +265,7 @@ const TestimonialsSection = () => (
 
 // Call to Action Section
 const CTASection = () => (
-  <section className="py-24 bg-blue-600 text-center">
+  <section className="py-24 bg-gray-600 text-center">
     <Container>
       <motion.h2
         initial={{ opacity: 0, y: 10 }}

@@ -50,7 +50,6 @@ const App = () => {
             <Route path="/company/api" element={<ApiPage/>}/>
             <Route path="/company/pricing" element={<Pricing/>}/>
             <Route path="/education" element={<Education />} />
-           
             <Route
               path="/software-engineering"
               element={<SoftwareEngineering />}
